@@ -1,0 +1,764 @@
+* {
+  margin: 0;
+}
+
+:root {
+  --dark-color: #222831;
+  --light-color: #f1f6f9;
+  --primary-color: #6807f9;
+  --dark-primary-color: #5500d5;
+  --darken-primary-color: #25005c;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  outline: none;
+}
+
+hr {
+  color: rgba(0, 0, 0, 0.3);
+  margin: 24px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: var(--primary-color);
+  transition: .2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--dark-primary-color);
+}
+
+.card {
+  background-color: white;
+  -webkit-box-shadow: 6px 6px 22px 2px rgba(0,0,0,0.2);
+  -moz-box-shadow: 6px 6px 22px 2px rgba(0,0,0,0.2);
+  box-shadow: 6px 6px 22px 2px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 24px 30px;
+}
+
+.card.card-image {
+  padding: 0;
+}
+
+.card.card-image .image img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card.card-image .body {
+  padding: 20px 18px;
+}
+
+.badge {
+  width: auto;
+  background-color: rgb(104, 7, 249, 0.2);
+  padding: 4px 10px;
+  border-radius: 5px;
+  color: var(--darken-primary-color);
+}
+
+
+
+/*
+-------------------------
+* Navbar  
+-------------------------
+*/
+
+.navbar {
+  width: 100%;
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  transition: .5s;
+  background-color: transparent;
+}
+
+.navbar.toggle-on {
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.nav-scroll {
+  -webkit-box-shadow: 0 10px 15px rgba(25,25,25,0.1);
+  -moz-box-shadow: 0 10px 15px rgba(25,25,25,0.1);
+  box-shadow: 0 10px 15px rgba(25,25,25,0.1);
+  background-color: #fff;
+  padding: 16px 0;
+}
+
+.navbar .nav-toggle {
+  display: none;
+  position: absolute;
+  top: 34px;
+  right: 10px;
+  transition: .5s;
+}
+
+.navbar.nav-scroll .nav-toggle {
+  top: 20px;
+}
+
+.navbar .nav-toggle button {
+  font-size: 32px;
+  font-weight: bolder;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: var(--primary-color);
+}
+
+.navbar .nav-brand {
+  padding-left: 100px;
+  padding-top: 6px;
+}
+
+.navbar .nav-brand a {
+  font-size: 26px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
+
+.navbar .nav-menu {
+  padding-right: 100px;
+}
+
+.navbar.toggle-on .nav-menu {
+  display: block;
+}
+
+.navbar .nav-menu ul {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  padding: 10px 0;
+}
+
+.navbar.toggle-on .nav-menu {
+  padding-right: 0;
+}
+
+.navbar.toggle-on .nav-menu ul {
+  flex-direction: column;
+}
+
+.navbar .nav-menu ul li {
+  margin-left: 60px;
+}
+
+.navbar.toggle-on .nav-menu ul li {
+  text-align: center;
+  padding: 16px 0;
+  margin-left: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 0 60px;
+}
+
+.navbar .nav-menu ul li a {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  color: var(--dark-color);
+  transition: .2s;
+}
+
+.navbar .nav-menu ul li.active a {
+  color: var(--primary-color);
+}
+
+.navbar.toggle-on .nav-menu ul li a {
+  font-size: 16px;
+}
+
+.navbar .nav-menu ul li a:hover {
+  color: var(--primary-color);
+}
+
+@media (max-width: 1200px) {
+  .navbar .nav-menu {
+    padding-right: 40px;
+  }
+  
+  .navbar .nav-brand {
+    padding-left: 40px;
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar .nav-menu {
+    display: none;
+  }
+
+  .navbar .nav-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar .nav-brand {
+    padding-left: 20px;
+  }
+}
+
+/*
+-------------------------
+* /Navbar 
+-------------------------
+*/
+
+
+
+/*
+-------------------------
+* Header
+-------------------------
+*/
+
+header {
+  width: 100%;
+  height: 100vh;
+  background: url('./../img/background/header.png') no-repeat;
+  background-size: cover;
+}
+
+header .content {
+  height: 100%;
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+header .content .title,
+header .content .image {
+  align-self: center;
+}
+
+header .content .title {
+  text-transform: uppercase;
+}
+
+header .content .title h1 {
+  padding: 16px 0;
+}
+
+header .content .title .greeting {
+  font-size: 38px;
+  font-weight: 500;
+  position: relative;
+}
+
+header .content .title .greeting::after {
+  content: "";
+  display: inline-block;
+  width: 350px;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  background-color: #000000;
+}
+
+header .content .title .name {
+  font-size: 46px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+header .content .title .job {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+header .content .image img {
+  width: 480px;
+  margin-top: 80px;
+}
+
+@media (max-width: 1200px) {
+  header .content .image img {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  header .content .title .greeting::after {
+    display: none;
+  }
+
+  header .content {
+    padding: 0 40px;
+  }
+}
+
+/*
+-------------------------
+* /Header
+-------------------------
+*/
+
+
+
+/*
+-------------------------
+* Section
+-------------------------
+*/
+
+section {
+  padding: 120px 0;
+}
+
+section .title {
+  text-align: center;
+}
+
+section .title h1 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+section .title h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: var(--primary-color);
+  margin: auto;
+  margin-top: 6px;
+}
+
+section .content {
+  padding-top: 60px;
+}
+
+/*
+-------------------------
+* /Section
+-------------------------
+*/
+
+
+
+/*
+-------------------------
+* About
+-------------------------
+*/
+
+.about {
+  background: url('./../img/background/about.png') no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  height: auto;
+}
+
+.about .content {
+  padding-top: 60px;
+}
+
+.about .content .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about .content .personal .image,
+.about .content .personal .description {
+  width: 50%;
+}
+
+.about .content .personal .image {
+  text-align: center;
+}
+
+.about .content .personal .image img {
+  width: 380px;
+}
+
+.about .content .personal .description {
+  align-self: center;
+  padding-right: 100px;
+}
+
+.about .content .personal .description h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.about .content .personal .description p {
+  margin: 14px 0;
+  line-height: 2;
+}
+
+.about .content .personal .description .social-media {
+  display: flex;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+.about .content .personal .description .social-media
+.icon {
+  margin-right: 10px;
+}
+
+.about .content .personal .description .social-media
+.icon i {
+  background-color: rgba(0, 0, 0, 0.15);
+  font-size: 18px;
+  border-radius: 50%;
+  color: #fff;
+  padding: 8px 8px;
+  transition: .4s;
+}
+
+.about .content .personal .description .social-media
+.icon i:hover {
+  background-color: var(--primary-color);
+}
+
+.about .content .row.other {
+  padding: 80px 100px 0 100px;
+}
+
+.about .content .other .column {
+  width: 50%;
+}
+
+.about .content .other .sub-title {
+  font-weight: 500;
+  font-size: 22px;
+  display: flex;
+}
+
+.about .content .other .sub-title i {
+  display: block;
+  margin-right: 8px;
+}
+
+.about .content .other .education,
+.about .content .other .achievements {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.about .content .other .education .school {
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.about .content .other .education .school h2 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.about .content .other .education .school .title {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--primary-color);
+  text-align: left;
+}
+
+.about .content .other .education .school .name {
+  padding: 4px 0;
+  position: relative;
+}
+
+.about .content .other .education .school .name,
+.about .content .other .education .school .year {
+  text-transform: uppercase;
+}
+
+.about .content .other .education .school .year {
+  font-size: 16px;
+}
+
+.about .content .other .achievement {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.about .content .other .achievement i {
+  margin-right: 8px;
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+.about .content .other .achievement h2 {
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+@media (max-width: 992px) {
+  .about .content .row.personal {
+    flex-direction: column;
+  }
+
+  .about .content .personal .image,
+  .about .content .personal .description {
+    width: 100%;
+  }
+
+  .about .content .personal .image img {
+    width: 300px;
+  }
+
+  .about .content .personal .description {
+    text-align: center;
+    padding-top: 20px;
+    padding-right: 0;
+  }
+
+  .about .content .personal .description p {
+    padding: 0 100px;
+  }
+
+  .about .content .personal .description .social-media {
+    justify-content: center;
+  }
+
+  .about .content .row {
+    flex-direction: column;
+  }
+
+  .about .content .other .column {
+    width: 100%;
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about .content .personal .description p {
+    padding: 0 40px;
+  }
+
+  .about .content .personal .description h1 {
+    font-size: 32px;
+  }
+
+  .about .content .row.other {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+/*
+-------------------------
+* /About
+-------------------------
+*/
+
+
+
+/*
+-------------------------
+* Skills
+-------------------------
+*/
+
+.skills {
+  background: url('./../img/background/skills.png') no-repeat;
+  background-size: cover;
+  padding-bottom: 0;
+}
+
+.skills .content {
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-top: 40px;
+}
+
+.skills .content .sub-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.skills .content .sub-title h3 {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.skills .content .row {
+  width: 100%;
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.skills .column {
+  width: 50%;
+}
+
+.skills .skill {
+  display: flex;
+  margin-bottom: 22px;
+}
+
+.skills .skill .logo {
+  width: 14%;
+  text-align: right;
+}
+
+.skills .skill .logo img {
+  width: 60%;
+  margin-right: 24px;
+}
+
+.skills .skill .indicator {
+  width: 70%;
+  align-self: center;
+}
+
+.skills .skill .indicator .space {
+  width: 100%;
+  height: 10px;
+  background-color: #c2c2c2;
+  position: relative;
+}
+
+.skills .skill .indicator .space h3 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin-top: 6px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.skills .skill .indicator .fill {
+  width: 0%;
+  height: 10px;
+  background-color: var(--primary-color);
+  text-align: right;
+}
+
+@media (max-width: 1200px) {
+  .skills .skill .logo img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 992px) {
+  .skills .content .row {
+    flex-direction: column;
+  }
+
+  .skills .column {
+    width: 100%;
+  }
+
+  .skills .skill .logo {
+    width: 20%;
+  }
+
+  .skills .skill .logo img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills .content {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .skills .skill {
+    margin-bottom: 30px;
+  }
+}
+
+/*
+-------------------------
+* /Skills
+-------------------------
+*/
+
+
+
+/*
+-------------------------
+* contact
+-------------------------
+*/
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: rgb(0, 102, 255);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #1f00cc;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  padding-top: 100px;
+  padding-bottom: 250px;
+}
+.kontak{
+  text-align: center;
+  padding-bottom: 100px;
+  
+
+}
+
+/*
+-------------------------
+* contact
+-------------------------
+*/
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer p {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+}
